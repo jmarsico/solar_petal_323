@@ -1,0 +1,11 @@
+<group>
+	<rate>1770</rate>
+	<show_on>1</show_on>
+	<voltage_per_petal>2.5</voltage_per_petal>
+	<current_per_petal>1</current_per_petal>
+	<number_of_petals_on>0</number_of_petals_on>
+	<total_current_draw>0</total_current_draw>
+	<wattage>0</wattage>
+<group/>
+	<rowOffset>30</rowOffset>
+</group>
