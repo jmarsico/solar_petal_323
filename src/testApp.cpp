@@ -90,24 +90,21 @@ void testApp::update(){
     currentDraw = numPetalsOn * current;
     wattage = numPetalsOn * current * voltage;
     
-    totalLight= totalLight - readings[index];
-    // read from the sensor:
-    readings[index] = lightVal;
-    // add the reading to the totalLight:
-    totalLight= totalLight + readings[index];
-    // advance to the next position in the array:
-    index = index + 1;
     
+    ///////  smooth the light readings //////////
+    totalLight= totalLight - readings[index];
+    readings[index] = lightVal;
+    totalLight= totalLight + readings[index];
+    index = index + 1;
     // if we're at the end of the array...
     if (index >= numReadings)
-        // ...wrap around to the beginning:
+    {
         index = 0;
-    
-    // calculate the averageLight:
+    }
     averageLight = totalLight / numReadings;
-    // send it to the computer as ASCII digits
     
     
+    waitTime = ofMap(averageLight, 0, 500, 0, 2000);
     
     //sendToPhysical();
 
